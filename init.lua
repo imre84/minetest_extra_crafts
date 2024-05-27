@@ -1,18 +1,7 @@
-minetest.register_craft({
-    output = 'default:marram_grass_1 1',
-    recipe = {
-        {'bucket:bucket_water', 'bucket:bucket_water', 'bucket:bucket_water'},
-        {'bonemeal:bonemeal', 'default:dry_shrub', 'bonemeal:bonemeal'},
-        {'default:sand', 'default:sand', 'default:sand'},
-    },
-    replacements = {
-        {"bucket:bucket_water", "bucket:bucket_water"},
-        {"bucket:bucket_water", "bucket:bucket_water"},
-        {"bucket:bucket_water", "bucket:bucket_water"},
-        {"bonemeal:bonemeal", "bonemeal:bonemeal"},
-        {"bonemeal:bonemeal", "bonemeal:bonemeal"},
-        {"default:sand", "default:sand"},
-        {"default:sand", "default:sand"},
-        {"default:sand", "default:sand"},
-    },
-})
+local path = minetest.get_modpath('extra_crafts')
+
+dofile(path .. "/unsorted.lua")
+
+if minetest.get_modpath("pipeworks") then
+    dofile(path .. "/pipeworks.lua")
+end

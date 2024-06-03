@@ -1,7 +1,11 @@
 local path = minetest.get_modpath('extra_crafts')
 
-dofile(path .. "/unsorted.lua")
-
-if minetest.get_modpath("pipeworks") then
-    dofile(path .. "/pipeworks.lua")
+local function cdo(moddep)
+    if minetest.get_modpath(moddep) then
+        dofile(path .. "/" .. moddep .. ".lua")
+    end
 end
+
+cdo("default")
+cdo("pipeworks")
+cdo("mesecons")
